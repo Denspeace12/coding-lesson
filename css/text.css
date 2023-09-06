@@ -1,0 +1,107 @@
+.moving-text {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 2rem;
+  animation: moveBackAndForth 3s ease-in-out infinite;
+}
+
+@keyframes  moveBackAndForth {
+    0%, 100% { 
+      left: 0;
+    }
+
+    50% {
+        left: 100px;
+    }
+}
+
+.fade-in-out {
+  text-align: center;
+  color: #111;
+  font-size: 29px;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeInOut 1s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+}
+
+.parallax-container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.parallax-container::before {
+    content: "";
+    background-image: url('./img/burning.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: parallax 10s linear infinite;
+}
+
+@keyframes parallax {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10%);
+    }
+}
+
+.parallax-heading {
+   color: #fff;
+   font-size: 30px;
+   font-weight: 700;
+}
+
+.parallax-copy {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.loading-spinner {
+  border:  4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 3s linear infinite;
+  margin: 100px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
